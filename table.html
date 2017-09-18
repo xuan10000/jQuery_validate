@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function() {
+        $("#commentForm").validate();
+    });
+</script>
+<form class="cmxform" id="commentForm" method="get" action="">
+    <fieldset>
+        <legend>输入您的名字，邮箱，URL，备注。</legend>
+        <p class="col-md-4">
+            <label for="cname">Name (必需, 最小两个字母)</label>
+            <input id="cname" name="name" minlength="2" type="text" required class="form-control">
+        </p>
+        <p class="col-md-4">
+            <label for="cemail">E-Mail (必需)</label>
+            <input id="cemail" type="email" name="email" required class="form-control">
+        </p>
+        <p class="col-md-4">
+            <label for="curl">URL (可选)</label>
+            <input id="curl" type="url" name="url" class="form-control">
+        </p>
+        <p class="col-md-6">
+            <label for="ccomment">备注 (必需)</label>
+            <textarea id="ccomment" name="comment" required class="form-control"></textarea>
+        </p>
+        <p class="col-md-12">
+            <input class="submit" type="submit" value="Submit">
+        </p>
+    </fieldset>
+</form>
+</body>
+</html>
